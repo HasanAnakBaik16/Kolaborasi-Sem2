@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills – Hasan Pratama</title>
+
+  <!-- Same CSS as index.html -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Skills-page extra styles (appended below inline via <style>) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================================================
+       SKILLS PAGE — additional styles only (re-uses style.css fully)
+    ================================================================ */
+
+    /* ── Hero strip ── */
+    .sp-hero {
+      padding: 140px 0 72px;
+      background:
+        radial-gradient(ellipse 70% 70% at 50% 0%, rgba(26,108,246,0.13) 0%, transparent 65%),
+        var(--bg);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .sp-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+    .sp-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 680px; margin: 0 auto; padding: 0 28px;
+    }
+    .sp-eyebrow {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .26em; color: var(--blue);
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sp-title {
+      font-family: var(--fh);
+      font-size: clamp(2.1rem, 5vw, 3.2rem);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: -.02em; margin-bottom: 18px;
+    }
+    .sp-title span { color: var(--blue); }
+    .sp-sub {
+      color: var(--grey); font-size: .94rem; line-height: 1.75;
+      margin-bottom: 36px;
+    }
+    .sp-breadcrumb {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--grey);
+    }
+    .sp-breadcrumb a { color: var(--grey); transition: color var(--tr); }
+    .sp-breadcrumb a:hover { color: var(--white); }
+    .sp-breadcrumb svg { width: 12px; height: 12px; color: var(--grey2); flex-shrink: 0; }
+
+    /* ── Summary chips ── */
+    .sp-summary {
+      padding: 60px 0;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+    .sp-summary-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 28px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .summary-chip {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 24px;
+      display: flex; align-items: center; gap: 16px;
+      transition: var(--tr);
+    }
+    .summary-chip:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(26,108,246,.1);
+    }
+    .chip-ico {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(26,108,246,.1); border: 1px solid rgba(26,108,246,.22);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue2); flex-shrink: 0;
+    }
+    .chip-ico svg { width: 22px; height: 22px; }
+    .chip-txt .chip-num {
+      font-family: var(--fh); font-size: 1.55rem; font-weight: 800;
+      line-height: 1; color: var(--white); display: block;
+    }
+    .chip-txt .chip-lbl {
+      font-size: .78rem; color: var(--grey); margin-top: 4px; display: block;
+    }
+
+    /* ── Main skills grid ── */
+    .sp-main {
+      padding: 80px 0 100px;
+      background: var(--bg);
+    }
+    .sp-main-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 28px;
+    }
+    .sp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 8px;
+    }
+
+    /* Skill detail card */
+    .spk-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px 28px;
+      transition: var(--tr);
+      position: relative;
+      overflow: hidden;
+    }
+    .spk-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--blue2));
+      border-radius: 16px 16px 0 0;
+      opacity: 0;
+      transition: opacity var(--tr);
+    }
+    .spk-card:hover {
+      border-color: rgba(26,108,246,.4);
+      transform: translateY(-5px);
+      box-shadow: 0 18px 50px rgba(26,108,246,.12);
+    }
+    .spk-card:hover::before { opacity: 1; }
+
+    /* Card header */
+    .spk-head {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 22px;
+    }
+    .spk-icon-wrap {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .spk-icon-wrap svg,
+    .spk-icon-wrap img { width: 30px; height: 30px; }
+
+    /* icon bg colours per language */
+    .ic-html   { background: rgba(227,79,38,.12); border: 1px solid rgba(227,79,38,.2); }
+    .ic-css    { background: rgba(21,114,182,.12); border: 1px solid rgba(21,114,182,.2); }
+    .ic-js     { background: rgba(247,223,30,.08); border: 1px solid rgba(247,223,30,.18); }
+    .ic-github { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+    .ic-figma  { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); }
+    .ic-vsc    { background: rgba(0,122,204,.12); border: 1px solid rgba(0,122,204,.2); }
+
+    .spk-meta { flex: 1; }
+    .spk-name {
+      font-family: var(--fh); font-size: 1.08rem; font-weight: 700;
+      margin-bottom: 4px; color: var(--white);
+    }
+    .spk-category {
+      font-size: .78rem; color: var(--grey);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .spk-category svg { width: 12px; height: 12px; color: var(--blue); }
+
+    .spk-badge {
+      background: rgba(26,108,246,.12);
+      border: 1px solid rgba(26,108,246,.25);
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-family: var(--fh); font-size: .85rem; font-weight: 700;
+      color: var(--blue2);
+      white-space: nowrap;
+    }
+
+    /* Progress bar (large) */
+    .spk-bar-wrap {
+      margin-bottom: 16px;
+    }
+    .spk-bar-labels {
+      display: flex; justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .spk-bar-labels span {
+      font-size: .78rem; color: var(--grey);
+    }
+    .spk-bar-labels .bar-pct {
+      font-family: var(--fh); font-weight: 700; color: var(--blue2); font-size: .84rem;
+    }
+    .spk-bar {
+      height: 10px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px; overflow: hidden;
+    }
+    .spk-fill {
+      height: 100%; width: 0;
+      border-radius: 10px;
+      transition: width 1.5s cubic-bezier(.22,1,.36,1);
+      position: relative;
+    }
+    /* Animated shimmer inside fill */
+    .spk-fill::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; left: -60%;
+      width: 60%; border-radius: inherit;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+      animation: bar-shimmer 2.4s ease-in-out infinite;
+    }
+    @keyframes bar-shimmer {
+      0%   { left: -60%; }
+      100% { left: 120%; }
+    }
+
+    /* colour per skill */
+    .fill-html   { background: linear-gradient(90deg, #e34f26, #f06529); }
+    .fill-css    { background: linear-gradient(90deg, #1572b6, #33a9dc); }
+    .fill-js     { background: linear-gradient(90deg, #c8a800, #f7df1e); }
+    .fill-github { background: linear-gradient(90deg, var(--blue), var(--blue2)); }
+    .fill-figma  { background: linear-gradient(90deg, #a259ff, #f24e1e); }
+    .fill-vsc    { background: linear-gradient(90deg, #007acc, #29b6f6); }
+
+    /* Detail bullets */
+    .spk-details {
+      list-style: none; display: flex; flex-direction: column; gap: 8px;
+      margin-top: 4px;
+    }
+    .spk-details li {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: .84rem; color: var(--grey); line-height: 1.55;
+    }
+    .spk-details li svg {
+      width: 14px; height: 14px; color: var(--blue); flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ── Level legend ── */
+    .sp-legend {
+      max-width: 1200px; margin: 0 auto; padding: 0 28px 80px;
+      display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    }
+    .legend-label { font-size: .8rem; color: var(--grey); margin-right: 4px; }
+    .legend-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 14px; border-radius: 20px; font-size: .78rem; font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .legend-chip .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .leg-beginner   { color: #94a3b8; }
+    .leg-beginner .dot { background: #94a3b8; }
+    .leg-elementary { color: #60a5fa; }
+    .leg-elementary .dot { background: #60a5fa; }
+    .leg-intermediate { color: #34d399; }
+    .leg-intermediate .dot { background: #34d399; }
+    .leg-advanced   { color: #f59e0b; }
+    .leg-advanced .dot { background: #f59e0b; }
+
+    /* ── CTA strip ── */
+    .sp-cta {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 70px 0;
+      text-align: center;
+    }
+    .sp-cta h2 {
+      font-family: var(--fh); font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800; margin-bottom: 14px;
+    }
+    .sp-cta h2 span { color: var(--blue); }
+    .sp-cta p { color: var(--grey); font-size: .93rem; margin-bottom: 32px; }
+    .sp-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .sp-grid { grid-template-columns: 1fr; }
+      .sp-summary-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .sp-summary-inner { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .summary-chip { padding: 16px; }
+      .spk-card { padding: 22px 18px; }
+      .sp-legend { gap: 8px; }
+    }
+    @media (max-width: 400px) {
+      .sp-summary-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR  (identical to index.html)
+  ═══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">HASAN <span>PRATAMA</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home"     class="nav-link">Home</a></li>
+        <li><a href="index.html#about"    class="nav-link">About Me</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#services" class="nav-link">Help</a></li>
+        <li><a href="index.html#contact"  class="nav-link">Contact</a></li>
+        <li><a href="skills.html"         class="nav-link active">Skills</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       HERO STRIP
+  ═══════════════════════════════════ -->
+  <section class="sp-hero">
+    <div class="sp-hero-inner">
+      <span class="sp-eyebrow">Technical Skills</span>
+      <h1 class="sp-title">My <span>Skills</span> &amp; Tools</h1>
+      <p class="sp-sub">
+        A detailed look at the technologies, tools, and languages I've been
+        learning and working with — along with honest progress percentages.
+      </p>
+      <nav class="sp-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <span>Skills</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       SUMMARY CHIPS
+  ═══════════════════════════════════ -->
+  <section class="sp-summary">
+    <div class="sp-summary-inner">
+
+      <div class="summary-chip" data-aos="fade-up">
+        <div class="chip-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg>
+        </div>
+        <div class="chip-txt">
+          <span class="chip-num">6</span>
+          <span class="chip-lbl">Skills Tracked</span>
+        </div>
+      </div>
+
+      <div class="summary-chip" data-aos="fade-up" data-aos-delay="100">
+        <div class="chip-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="chip-txt">
+          <span class="chip-num">~50%</span>
+          <span class="chip-lbl">Average Proficiency</span>
+        </div>
+      </div>
+
+      <div class="summary-chip" data-aos="fade-up" data-aos-delay="200">
+        <div class="chip-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="chip-txt">
+          <span class="chip-num">1+ Yr</span>
+          <span class="chip-lbl">Active Learning</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       MAIN SKILLS GRID
+  ═══════════════════════════════════ -->
+  <section class="sp-main">
+    <div class="sp-main-inner">
+      <h2 class="section-heading"><span class="hbar"></span> SKILL PROGRESS</h2>
+
+      <div class="sp-grid">
+
+        <!-- ── HTML ── -->
+        <div class="spk-card" data-aos="fade-up">
+          <div class="spk-head">
+            <div class="spk-icon-wrap ic-html">
+              <!-- HTML5 icon -->
+              <svg viewBox="0 0 32 32"><path fill="#e34f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"/><path fill="#ef652a" d="M16 27.858l8.217-2.276 1.927-21.575H16z"/><path fill="#fff" d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83.759 8.517H16zm0 8.027l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.331 1.758.015-.004z"/><path fill="#ebebeb" d="M15.989 13.407v3.091h3.806l-.358 4.009-3.448.93v3.216l6.337-1.757.046-.522.726-8.131.076-.836zm0-6.256v3.091h7.466l.062-.694.141-1.567.074-.83z"/></svg>
+            </div>
+            <div class="spk-meta">
+              <p class="spk-name">HTML</p>
+              <p class="spk-category">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Markup Language
+              </p>
+            </div>
+            <span class="spk-badge">55%</span>
+          </div>
+
+          <div class="spk-bar-wrap">
+            <div class="spk-bar-labels">
+              <span>Beginner</span>
+              <span class="bar-pct">55 / 100</span>
+            </div>
+            <div class="spk-bar">
+              <div class="spk-fill fill-html" data-pct="55"></div>
+            </div>
+          </div>
+
+          <ul class="spk-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Familiar with semantic HTML5 elements (header, nav, section, article, footer)
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Can build complete page structures and forms
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Learning: advanced accessibility (ARIA), SEO optimisation
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── CSS ── -->
+        <div class="spk-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="spk-head">
+            <div class="spk-icon-wrap ic-css">
+              <svg viewBox="0 0 32 32"><path fill="#1572b6" d="M5.902 27.201L3.656 2h24.688l-2.249 25.197L15.985 30z"/><path fill="#33a9dc" d="M16 27.858l8.217-2.276 1.926-21.575H16z"/><path fill="#fff" d="M16 13.191h4.09l.282-3.165H16V6.935h7.75l-.074.735-.76 8.612H16zm0 8.027l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.331 1.758.015-.004v-3.216z"/><path fill="#ebebeb" d="M15.989 13.191v3.091h-3.806l-.358 4.009 3.448.93v3.216l-6.337-1.757-.046-.522-.726-8.131-.076-.836zm0-6.256v3.091H8.523l-.062-.694-.141-1.567-.074-.83z"/></svg>
+            </div>
+            <div class="spk-meta">
+              <p class="spk-name">CSS</p>
+              <p class="spk-category">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                Styling Language
+              </p>
+            </div>
+            <span class="spk-badge">40%</span>
+          </div>
+
+          <div class="spk-bar-wrap">
+            <div class="spk-bar-labels">
+              <span>Beginner</span>
+              <span class="bar-pct">40 / 100</span>
+            </div>
+            <div class="spk-bar">
+              <div class="spk-fill fill-css" data-pct="40"></div>
+            </div>
+          </div>
+
+          <ul class="spk-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Comfortable with Flexbox and basic Grid layouts
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Can apply transitions, hover effects, and basic animations
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Learning: CSS variables, keyframes, media queries mastery
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── JavaScript ── -->
+        <div class="spk-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="spk-head">
+            <div class="spk-icon-wrap ic-js">
+              <svg viewBox="0 0 32 32"><path fill="#f7df1e" d="M2 2h28v28H2z"/><path d="M20.809 23.875a2.866 2.866 0 0 0 2.6 1.6c1.09 0 1.787-.545 1.787-1.3 0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964 0-1.973 1.5-3.476 3.853-3.476a3.889 3.889 0 0 1 3.742 2.107l-2.048 1.315a1.789 1.789 0 0 0-1.694-1.134 1.149 1.149 0 0 0-1.262 1.134c0 .794.49 1.116 1.621 1.608l.658.282c2.237.959 3.5 1.938 3.5 4.134 0 2.369-1.861 3.665-4.36 3.665a5.056 5.056 0 0 1-4.795-2.691zm-9.295.228c.413.733.789 1.353 1.686 1.353.861 0 1.405-.337 1.405-1.644V14.988h2.573v8.869c0 2.709-1.588 3.938-3.905 3.938a4.055 4.055 0 0 1-3.924-2.417z"/></svg>
+            </div>
+            <div class="spk-meta">
+              <p class="spk-name">JavaScript</p>
+              <p class="spk-category">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Programming Language
+              </p>
+            </div>
+            <span class="spk-badge">30%</span>
+          </div>
+
+          <div class="spk-bar-wrap">
+            <div class="spk-bar-labels">
+              <span>Beginner</span>
+              <span class="bar-pct">30 / 100</span>
+            </div>
+            <div class="spk-bar">
+              <div class="spk-fill fill-js" data-pct="30"></div>
+            </div>
+          </div>
+
+          <ul class="spk-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Understands variables, functions, loops, and basic DOM manipulation
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Can handle events and basic form validation
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Learning: ES6+, async/await, fetch API, array methods
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── GitHub ── -->
+        <div class="spk-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="spk-head">
+            <div class="spk-icon-wrap ic-github">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="spk-meta">
+              <p class="spk-name">GitHub</p>
+              <p class="spk-category">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                Version Control
+              </p>
+            </div>
+            <span class="spk-badge">67%</span>
+          </div>
+
+          <div class="spk-bar-wrap">
+            <div class="spk-bar-labels">
+              <span>Elementary</span>
+              <span class="bar-pct">67 / 100</span>
+            </div>
+            <div class="spk-bar">
+              <div class="spk-fill fill-github" data-pct="67"></div>
+            </div>
+          </div>
+
+          <ul class="spk-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Comfortable with git init, commit, push, pull, and branching
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Regularly uses GitHub for project hosting and collaboration
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Learning: pull requests, code review, GitHub Actions
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── Figma ── -->
+        <div class="spk-card" data-aos="fade-up" data-aos-delay="320">
+          <div class="spk-head">
+            <div class="spk-icon-wrap ic-figma">
+              <svg viewBox="0 0 38 57"><path fill="#f24e1e" d="M19 28.5a9.5 9.5 0 0 1 9.5-9.5H19a9.5 9.5 0 0 0 0 19h9.5A9.5 9.5 0 0 1 19 28.5z"/><path fill="#ff7262" d="M9.5 47.5A9.5 9.5 0 0 0 19 57V38H9.5a9.5 9.5 0 0 0 0 19z"/><path fill="#1abcfe" d="M28.5 19A9.5 9.5 0 1 0 28.5 38 9.5 9.5 0 1 0 28.5 19z"/><path fill="#0acf83" d="M9.5 19H19V0H9.5A9.5 9.5 0 0 0 9.5 19z"/><path fill="#a259ff" d="M19 0h9.5A9.5 9.5 0 1 1 19 19V0z"/></svg>
+            </div>
+            <div class="spk-meta">
+              <p class="spk-name">Figma</p>
+              <p class="spk-category">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                UI/UX Design Tool
+              </p>
+            </div>
+            <span class="spk-badge">53%</span>
+          </div>
+
+          <div class="spk-bar-wrap">
+            <div class="spk-bar-labels">
+              <span>Elementary</span>
+              <span class="bar-pct">53 / 100</span>
+            </div>
+            <div class="spk-bar">
+              <div class="spk-fill fill-figma" data-pct="53"></div>
+            </div>
+          </div>
+
+          <ul class="spk-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Can design wireframes and basic UI mockups
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Uses components, auto-layout, and basic prototyping
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Learning: design systems, variables, advanced interactive flows
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── VS Code ── -->
+        <div class="spk-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="spk-head">
+            <div class="spk-icon-wrap ic-vsc">
+              <svg viewBox="0 0 100 100"><path fill="#007ACC" d="M74.3 3.3L51.5 27 32.6 11.5 6.1 23.2v53.6l26.5 11.7 18.9-15.5 22.8 23.7 19.6-8.1V11.4L74.3 3.3zM12 69.8V30.2l18.4 19.8L12 69.8zM35 72.7L17.9 50 35 27.3l17.1 22.7-17.1 22.7zM88 69.8 69.6 50 88 30.2v39.6z"/></svg>
+            </div>
+            <div class="spk-meta">
+              <p class="spk-name">VS Code</p>
+              <p class="spk-category">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                Code Editor
+              </p>
+            </div>
+            <span class="spk-badge">75%</span>
+          </div>
+
+          <div class="spk-bar-wrap">
+            <div class="spk-bar-labels">
+              <span>Intermediate</span>
+              <span class="bar-pct">75 / 100</span>
+            </div>
+            <div class="spk-bar">
+              <div class="spk-fill fill-vsc" data-pct="75"></div>
+            </div>
+          </div>
+
+          <ul class="spk-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Daily driver — very comfortable with the interface and shortcuts
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Uses extensions: Prettier, Live Server, GitLens, Emmet
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Learning: debugger, custom snippets, and terminal integration
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /sp-grid -->
+    </div><!-- /sp-main-inner -->
+
+    <!-- Level legend -->
+    <div class="sp-legend">
+      <span class="legend-label">Levels:</span>
+      <span class="legend-chip leg-beginner"><span class="dot"></span>Beginner (0–39%)</span>
+      <span class="legend-chip leg-elementary"><span class="dot"></span>Elementary (40–59%)</span>
+      <span class="legend-chip leg-intermediate"><span class="dot"></span>Intermediate (60–79%)</span>
+      <span class="legend-chip leg-advanced"><span class="dot"></span>Advanced (80–100%)</span>
+    </div>
+
+  </section><!-- /sp-main -->
+
+  <!-- ═══════════════════════════════════
+       CTA STRIP
+  ═══════════════════════════════════ -->
+  <section class="sp-cta">
+    <div class="section-container">
+      <h2>Want to work <span>together?</span></h2>
+      <p>I'm always open to learning, collaborating, and building cool things on the web.</p>
+      <div class="sp-cta-btns">
+        <a href="index.html#contact" class="btn btn-primary">
+          Get in Touch
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="index.html#projects" class="btn btn-outline">
+          View Projects
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       FOOTER  (identical to index.html)
+  ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="f-brand">
+        <span class="f-logo">HASAN <span>PRATAMA</span></span>
+        <p>Web Developer crafting digital solutions with clean code and great design.</p>
+        <div class="f-socials">
+          <a href="#" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Home</a></li>
+          <li><a href="index.html#about"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>About Me</a></li>
+          <li><a href="index.html#projects"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Projects</a></li>
+          <li><a href="index.html#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Help</a></li>
+          <li><a href="index.html#contact"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Web Development</a></li>
+          <li><a href="index.html#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>UI/UX Design</a></li>
+          <li><a href="index.html#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Responsive Design</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            hasan.p25081@satamail.my.id
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.29 6.29l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +62 812 3456 7890
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Indonesia
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 Hasan Pratama. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Reuse existing script.js — it handles navbar, hamburger, AOS -->
+  <script src="script.js"></script>
+
+  <!-- Skills-page only: animate the large spk-fill bars on scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fills = document.querySelectorAll('.spk-fill');
+      if (!fills.length) return;
+
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const pct = entry.target.dataset.pct || 0;
+            // Small stagger based on card position
+            const card  = entry.target.closest('.spk-card');
+            const cards = Array.from(document.querySelectorAll('.spk-card'));
+            const idx   = cards.indexOf(card);
+            setTimeout(() => {
+              entry.target.style.width = pct + '%';
+            }, 180 + idx * 80);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      fills.forEach(f => obs.observe(f));
+    });
+  </script>
+
+</body>
+</html>

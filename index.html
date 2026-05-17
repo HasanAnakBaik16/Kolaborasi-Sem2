@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasan Pratama – Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">HASAN <span>PRATAMA</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"     class="nav-link active">Home</a></li>
+        <li><a href="#about"    class="nav-link">About Me</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Help</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+
+      <!-- LEFT TEXT -->
+      <div class="hero-left">
+        <p class="hero-tag">WEB DEVELOPER</p>
+        <h1 class="hero-title">
+          BUILDING<br>
+          <span class="hero-accent">DIGITAL EXPERIENCES</span><br>
+          THROUGH CODE
+        </h1>
+        <p class="hero-desc">
+          I build modern, interactive, and functional web applications<br>
+          that help turn ideas into real solutions.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">View My Work
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">Contact Me
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="#" class="soc-icon" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="#" class="soc-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="soc-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="soc-icon" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CENTER PHOTO -->
+      <div class="hero-photo-col">
+        <div class="photo-wrap">
+          <div class="photo-blob"></div>
+          <div class="photo-ring"></div>
+          <div class="photo-circle">
+            <img src="asset/foto.png" alt="Hasan Pratama" />
+          </div>
+          <span class="deco d1"></span>
+          <span class="deco d2"></span>
+          <span class="deco d3"></span>
+          <span class="deco d4"></span>
+        </div>
+      </div>
+
+      <!-- RIGHT STATS -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="stat-body">
+            <span class="stat-num">1+</span>
+            <span class="stat-lbl">Year of Learning</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          </div>
+          <div class="stat-body">
+            <span class="stat-num">10+</span>
+            <span class="stat-lbl">Completed Projects</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT + SKILLS -->
+  <section class="about-section" id="about">
+    <div class="section-container about-grid">
+
+      <div class="about-card" data-aos="fade-right">
+        <h2 class="section-heading"><span class="hbar"></span> ABOUT ME</h2>
+        <p class="about-text">
+          Hi, I'm Hasan. I'm a software &amp; game development student in class XPPLG 2
+          at SMKN Tengaran, focusing on web development and digital solutions.
+          I'm very dedicated to learning technology.
+        </p>
+        <div class="traits-row">
+          <ul class="traits">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg>
+              Problem Solver
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+              Detail Oriented
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Fast Learner
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Team Player
+            </li>
+          </ul>
+          <div class="traits-btn-col">
+            <a href="story.html" class="btn btn-primary btn-mystory">My Story
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-card" data-aos="fade-left">
+        <h2 class="section-heading"><span class="hbar"></span> SKILLS &amp; TOOLS</h2>
+        <div class="skills-grid">
+
+          <a href="skills.html" class="skill-item">
+            <div class="skill-top">
+              <div class="sk-icon html-ic">
+                <svg viewBox="0 0 32 32" width="22" height="22"><path fill="#e34f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"/><path fill="#ef652a" d="M16 27.858l8.217-2.276 1.927-21.575H16z"/><path fill="#fff" d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83.759 8.517H16zm0 8.027l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.331 1.758.015-.004z"/><path fill="#fff" d="M15.989 13.407v3.091h3.806l-.358 4.009-3.448.93v3.216l6.337-1.757.046-.522.726-8.131.076-.836zm0-6.256v3.091h7.466l.062-.694.141-1.567.074-.83z"/></svg>
+              </div><span>HTML</span>
+            </div>
+            <div class="sk-bar-wrap"><div class="sk-bar" data-pct="55"><div class="sk-fill"></div></div><span class="sk-pct">55%</span></div>
+          </a>
+
+          <a href="skills.html" class="skill-item">
+            <div class="skill-top">
+              <div class="sk-icon css-ic">
+                <svg viewBox="0 0 32 32" width="22" height="22"><path fill="#1572b6" d="M5.902 27.201L3.656 2h24.688l-2.249 25.197L15.985 30z"/><path fill="#33a9dc" d="M16 27.858l8.217-2.276 1.926-21.575H16z"/><path fill="#fff" d="M16 13.191h4.09l.282-3.165H16V6.935h7.75l-.074.735-.76 8.612H16zm0 8.027l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.331 1.758.015-.004v-3.216z"/><path fill="#ebebeb" d="M15.989 13.191v3.091h-3.806l-.358 4.009 3.448.93v3.216l-6.337-1.757-.046-.522-.726-8.131-.076-.836zm0-6.256v3.091H8.523l-.062-.694-.141-1.567-.074-.83z"/></svg>
+              </div><span>CSS</span>
+            </div>
+            <div class="sk-bar-wrap"><div class="sk-bar" data-pct="40"><div class="sk-fill"></div></div><span class="sk-pct">40%</span></div>
+          </a>
+
+          <a href="skills.html" class="skill-item">
+            <div class="skill-top">
+              <div class="sk-icon js-ic">
+                <svg viewBox="0 0 32 32" width="22" height="22"><path fill="#f7df1e" d="M2 2h28v28H2z"/><path d="M20.809 23.875a2.866 2.866 0 0 0 2.6 1.6c1.09 0 1.787-.545 1.787-1.3 0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964 0-1.973 1.5-3.476 3.853-3.476a3.889 3.889 0 0 1 3.742 2.107l-2.048 1.315a1.789 1.789 0 0 0-1.694-1.134 1.149 1.149 0 0 0-1.262 1.134c0 .794.49 1.116 1.621 1.608l.658.282c2.237.959 3.5 1.938 3.5 4.134 0 2.369-1.861 3.665-4.36 3.665a5.056 5.056 0 0 1-4.795-2.691zm-9.295.228c.413.733.789 1.353 1.686 1.353.861 0 1.405-.337 1.405-1.644V14.988h2.573v8.869c0 2.709-1.588 3.938-3.905 3.938a4.055 4.055 0 0 1-3.924-2.417z"/></svg>
+              </div><span>JavaScript</span>
+            </div>
+            <div class="sk-bar-wrap"><div class="sk-bar" data-pct="30"><div class="sk-fill"></div></div><span class="sk-pct">30%</span></div>
+          </a>
+
+          <a href="skills.html" class="skill-item">
+            <div class="skill-top">
+              <div class="sk-icon gh-ic">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </div><span>GitHub</span>
+            </div>
+            <div class="sk-bar-wrap"><div class="sk-bar" data-pct="67"><div class="sk-fill"></div></div><span class="sk-pct">67%</span></div>
+          </a>
+
+          <a href="skills.html" class="skill-item">
+            <div class="skill-top">
+              <div class="sk-icon figma-ic">
+                <svg viewBox="0 0 38 57" width="18" height="18"><path fill="#f24e1e" d="M19 28.5a9.5 9.5 0 0 1 9.5-9.5H19a9.5 9.5 0 0 0 0 19h9.5A9.5 9.5 0 0 1 19 28.5z"/><path fill="#ff7262" d="M9.5 47.5A9.5 9.5 0 0 0 19 57V38H9.5a9.5 9.5 0 0 0 0 19z"/><path fill="#1abcfe" d="M28.5 19A9.5 9.5 0 1 0 28.5 38 9.5 9.5 0 1 0 28.5 19z"/><path fill="#0acf83" d="M9.5 19H19V0H9.5A9.5 9.5 0 0 0 9.5 19z"/><path fill="#a259ff" d="M19 0h9.5A9.5 9.5 0 1 1 19 19V0z"/></svg>
+              </div><span>Figma</span>
+            </div>
+            <div class="sk-bar-wrap"><div class="sk-bar" data-pct="53"><div class="sk-fill"></div></div><span class="sk-pct">53%</span></div>
+          </a>
+
+          <a href="skills.html" class="skill-item">
+            <div class="skill-top">
+              <div class="sk-icon vsc-ic">
+                <svg viewBox="0 0 100 100" width="22" height="22"><path fill="#007ACC" d="M74.3 3.3L51.5 27 32.6 11.5 6.1 23.2v53.6l26.5 11.7 18.9-15.5 22.8 23.7 19.6-8.1V11.4L74.3 3.3zM12 69.8V30.2l18.4 19.8L12 69.8zM35 72.7L17.9 50 35 27.3l17.1 22.7-17.1 22.7zM88 69.8 69.6 50 88 30.2v39.6z"/></svg>
+              </div><span>VS Code</span>
+            </div>
+            <div class="sk-bar-wrap"><div class="sk-bar" data-pct="75"><div class="sk-fill"></div></div><span class="sk-pct">75%</span></div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LATEST PROJECTS -->
+  <section class="projects-section" id="projects">
+    <div class="section-container">
+      <div class="projects-hdr">
+        <h2 class="section-heading"><span class="hbar"></span> LATEST PROJECTS</h2>
+        <button class="view-all-btn" id="viewAllBtn">View All Projects
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+
+      <div class="slider-wrap">
+        <button class="sl-arrow sl-prev" id="prevBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="sl-viewport" id="sliderViewport">
+          <div class="sl-track" id="sliderTrack">
+
+            <div class="proj-card">
+              <div class="proj-img"><img src="asset/web2.jpg" alt="Digital School"/><div class="proj-overlay"></div></div>
+              <div class="proj-body">
+                <h3>Digital School</h3>
+                <p>The website contains data on students and majors at a leading vocational school..</p>
+                <a href="https://safitririandhani-del.github.io/web-smk-digital/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+
+            <div class="proj-card">
+              <div class="proj-img"><img src="asset/web3.jpg" alt="Environment"/><div class="proj-overlay"></div></div>
+              <div class="proj-body">
+                <h3>Environment</h3>
+                <p>The website contains information about protecting and preserving the environment, as well as information about the world.</p>
+                <a href="https://hasananakbaik16.github.io/Tugas-3/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+
+            <div class="proj-card">
+              <div class="proj-img"><img src="asset/web1.png" alt="Waste Treatment"/><div class="proj-overlay"></div></div>
+              <div class="proj-body">
+                <h3>Waste Treatment</h3>
+                <p>A web application for managing and monitoring waste processing efficiently and sustainably.</p>
+                <a href="https://aurorasilviana.github.io/project1/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+
+            <div class="proj-card">
+              <div class="proj-img"><img src="asset/web4.png" alt="AutoCar"/><div class="proj-overlay"></div></div>
+              <div class="proj-body">
+                <h3>AutoCar</h3>
+                <p>The website contains information about car sales and various car brands from the past to the present.</p>
+                <a href="https://hasananakbaik16.github.io/Tugas-4/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+
+            <div class="proj-card">
+              <div class="proj-img"><img src="asset/web5.png" alt="Health Monitor"/><div class="proj-overlay"></div></div>
+              <div class="proj-body">
+                <h3>HarvestTable</h3>
+                <p>The website is about selling healthy and nutritious food for everyone with complete information.</p>
+                <a href="https://hasananakbaik16.github.io/Tugas-5/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="sl-arrow sl-next" id="nextBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="sl-dots" id="sliderDots"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="allProjectsModal">
+      <div class="modal-box">
+        <div class="modal-hdr">
+          <h2>All Projects</h2>
+          <button class="modal-close" id="modalClose">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="modal-grid">
+          <div class="modal-card"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300&q=80" alt=""/><div class="mc-body"><h3>Digital School</h3><p>Educational platform for school management.</p><a href="https://safitririandhani-del.github.io/web-smk-digital/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+          <div class="modal-card"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80" alt=""/><div class="mc-body"><h3>Environment</h3><p>Website about environmental conservation.</p><a href="https://hasananakbaik16.github.io/Tugas-3/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+          <div class="modal-card"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80" alt=""/><div class="mc-body"><h3>Waste Treatment</h3><p>Waste management and monitoring app.</p><a href="https://aurorasilviana.github.io/project1/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+          <div class="modal-card"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&q=80" alt=""/><div class="mc-body"><h3>AutoCar</h3><p>Modern e-commerce with inventory tracking.</p><a href="https://hasananakbaik16.github.io/Tugas-4/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+          <div class="modal-card"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&q=80" alt=""/><div class="mc-body"><h3>HarvestTable</h3><p>Personal health and fitness monitoring dashboard.</p><a href="https://hasananakbaik16.github.io/Tugas-5/" target="_blank" rel="noopener noreferrer" class="proj-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-container">
+      <h2 class="section-heading"><span class="hbar"></span> SERVICES</h2>
+      <div class="svc-grid">
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="svc-ico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="svc-txt"><h3>Web Development</h3><p>Building modern, responsive, and high-performance websites based on your needs.</p></div>
+        </div>
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="svc-ico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="svc-txt"><h3>UI/UX Design</h3><p>Designing attractive and user-friendly interfaces with a focus on the best user experience.</p></div>
+        </div>
+        <div class="svc-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="svc-ico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="svc-txt"><h3>Responsive Design</h3><p>Ensuring websites look and function great on all devices, especially mobile.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-container contact-grid">
+
+      <div class="contact-info" data-aos="fade-right">
+        <h2 class="section-heading"><span class="hbar"></span> GET IN TOUCH</h2>
+        <p class="contact-sub">Let's collaborate on your next great project.</p>
+        <ul class="contact-list">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:hasan.p25081@satamail.my.id">hasan.p25081@satamail.my.id</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.29 6.29l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+6281234567890">+62 812 3456 7890</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Indonesia
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-form-wrap" data-aos="fade-left">
+        <div class="cform">
+          <div class="form-row">
+            <input type="text"  placeholder="Your Name"  class="finput" id="formName"/>
+            <input type="email" placeholder="Your Email" class="finput" id="formEmail"/>
+          </div>
+          <textarea placeholder="Your Message" class="finput ftarea" id="formMsg" rows="5"></textarea>
+          <button class="btn btn-primary btn-block" id="sendBtn">Send Message
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="ffeedback" id="formFeedback"></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="f-brand">
+        <span class="f-logo">HASAN <span>PRATAMA</span></span>
+        <p>Web Developer crafting digital solutions with clean code and great design.</p>
+        <div class="f-socials">
+          <a href="#" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Home</a></li>
+          <li><a href="#about"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>About Me</a></li>
+          <li><a href="#projects"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Projects</a></li>
+          <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Help</a></li>
+          <li><a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Web Development</a></li>
+          <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>UI/UX Design</a></li>
+          <li><a href="#services"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Responsive Design</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            hasan.p25081@satamail.my.id
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.29 6.29l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +62 812 3456 7890
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Indonesia
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 Hasan Pratama. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
